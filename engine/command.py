@@ -1,13 +1,14 @@
 import pyttsx3
 import speech_recognition as sr
 import eel
+import time
 
 def speak(text):
     engine = pyttsx3.init()
     voices = engine.getProperty('voices')       #getting details of current voice
     engine.setProperty('voice', voices[14].id)   #changing index, changes voices. 1 for female, 8 : computer 
     engine.setProperty('rate', 184)     # setting up new voice rate
-
+    eel.DisplayMessage(text)
     engine.say(text)
     engine.runAndWait()
 
@@ -36,7 +37,7 @@ def takecommand():
         print(f"user said: {query}")
         eel.DisplayMessage(query)
         #speak(query)
-        eel.ShowHood()
+        
     except Exception as e:
         return ""
     
@@ -53,3 +54,5 @@ def allCommands():
         openCommand(query)
     else:
         print("dint find")
+        
+    eel.ShowHood()
