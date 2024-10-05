@@ -5,6 +5,7 @@ import eel
 from engine.config import ASSISTANT_NAME
 from engine.command import speak
 import pywhatkit as kit
+import platform
 
 # Playing Assistant Sound function
 @eel.expose
@@ -20,8 +21,12 @@ def openCommand(query):
 
     if query!="":
         speak("Opening"+ query)
-        os.system('open -a '+query)  #MAC          
-        #os.system('start'+query) #WINDOWS
+        if platform.system() == 'Darwin':
+            os.system('open -a '+query)  #MAC 
+        elif platform.system() == 'Windows':
+            os.system('start'+query) #WINDOWS
+        else:
+            print("This is another OS")
     else:
         speak("not found")
 
