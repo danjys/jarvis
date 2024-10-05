@@ -1,8 +1,10 @@
+import os
+import re
 from playsound import playsound
 import eel
 from engine.config import ASSISTANT_NAME
 from engine.command import speak
-import os
+import pywhatkit as kit
 
 # Playing Assistant Sound function
 @eel.expose
@@ -22,3 +24,16 @@ def openCommand(query):
         #os.system('start'+query) #WINDOWS
     else:
         speak("not found")
+
+def PlayYoutube(query):
+    search_term = extract_yt_term(query)
+    speak("Playing "+search_term+" on YouTube")
+    kit.playonyt(search_term)
+
+def extract_yt_term(command):
+    # Define a regular expression pattern to capture the song name
+    pattern = r'play\s+(.*?)\s+on\s+youtube'
+    # Use re.search to find the match in the command
+    match = re.search(pattern, command, re.IGNORECASE)
+    # If a match if found, return the extracted song name; otherwise return None
+    return match.group(1) if match else None    
