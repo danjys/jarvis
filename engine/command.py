@@ -11,7 +11,6 @@ def speak(text):
     engine.say(text)
     engine.runAndWait()
 
-@eel.expose
 def takecommand():
 
     r = sr.Recognizer()
@@ -36,12 +35,21 @@ def takecommand():
         query = r.recognize_google(audio, language='en-in')
         print(f"user said: {query}")
         eel.DisplayMessage(query)
-        speak(query)
+        #speak(query)
         eel.ShowHood()
     except Exception as e:
         return ""
     
     return query.lower()
 
-#text = takecommand()
-#speak(text)    
+@eel.expose
+def allCommands():
+
+    query = takecommand()
+    print(query)
+
+    if "open" in query:
+        from engine.features import openCommand
+        openCommand(query)
+    else:
+        print("dint find")
