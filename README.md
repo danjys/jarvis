@@ -1,7 +1,7 @@
 # J.A.R.V.I.S
 
 ## REQUIREMENTS
-```
+``` bash
 pip install --upgrade pip
 pip install pyobjc
 pip install pyttsx3
@@ -31,3 +31,30 @@ MACOSX ISSUE
 Since you're using the older version pvporcupine==1.9.5, which doesn't natively support Apple Silicon (arm64), there are a couple of approaches you can try to work around the architecture mismatch issue.
 
 //picovoice # AccessKey obtained from [Picovoice Console](https://console.picovoice.ai/)
+
+## USAGE
+- `open` an app : opens an app that is installed on the machine
+- `open` Youtube : opens a the webpage is this is configured in the sqlite
+- Play Thunder by Imagine Dragons `on youtube` : will open youtube and play the song
+
+
+
+
+
+
+
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
+
+> [!IMPORTANT]
+> Key information users need to know to achieve their goal.
+
+> [!WARNING]
+> Urgent info that needs immediate user attention to avoid problems.
+
+> [!CAUTION]
+> Advises about risks or negative outcomes of certain actions.
+
