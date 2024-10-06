@@ -5,15 +5,16 @@ import platform
 from engine.features import *
 from engine.command import *
 
-eel.init("www")
+def start():
+    eel.init("www")
 
-playAssistantSound()
+    playAssistantSound()
 
-if platform.system() == 'Darwin':
-    os.system('open -a /Applications/Safari.app http://localhost:8000/index.html') #MAC
-elif platform.system() == 'Windows':
-    os.system('start msedge.exe --app "http://localhost:8000/index.html"') #WINDOWS
-else:
-    print("This is another OS")
+    if platform.system() == 'Darwin':
+        os.system('open -a /Applications/Safari.app http://localhost:8000/index.html') #MAC
+    elif platform.system() == 'Windows':
+        os.system('start msedge.exe --app "http://localhost:8000/index.html"') #WINDOWS
+    else:
+        print("This is another OS")
 
-eel.start('index.html', mode=None, host='localhost', block=True)
+    eel.start('index.html', mode=None, host='localhost', block=True)
