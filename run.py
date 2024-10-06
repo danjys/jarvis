@@ -25,6 +25,7 @@ if __name__ == '__main__':
         p1.join()
 
         if p2.is_alive():
+            print('stopping hotword detection')
             p2.terminate()
             p2.join()
 
