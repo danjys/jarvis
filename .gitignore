@@ -1,3 +1,4 @@
 /envjarvis
 .env
 /engine/__pycache__
+jarvis.db
