@@ -1,11 +1,16 @@
 import os
 import re
+import sqlite3
+import webbrowser
 from playsound import playsound
 import eel
 from engine.config import ASSISTANT_NAME
 from engine.command import speak
 import pywhatkit as kit
 import platform
+
+con = sqlite3.connect('jarvis.db')
+cursor = con.cursor()
 
 # Playing Assistant Sound function
 @eel.expose
@@ -19,16 +24,48 @@ def openCommand(query):
     query = query.replace("open", "")
     query.lower()
 
-    if query!="":
-        speak("Opening"+ query)
-        if platform.system() == 'Darwin':
-            os.system('open -a '+query)  #MAC 
-        elif platform.system() == 'Windows':
-            os.system('start'+query) #WINDOWS
-        else:
-            print("This is another OS")
-    else:
-        speak("not found")
+    app_name = query.strip()
+    if app_name != "":
+
+        try:
+            cursor.execute(
+                'SELECT path FROM sys_command WHERE name IN (?)', (app_name,))
+            results = cursor.fetchall()
+
+            if len(results) != 0:
+                speak("Opening "+query)
+                os.startfile(results[0][0])
+
+            elif len(results) == 0: 
+                cursor.execute(
+                'SELECT url FROM web_command WHERE name IN (?)', (app_name,))
+                results = cursor.fetchall()
+                
+                if len(results) != 0:
+                    speak("Opening "+query)
+                    webbrowser.open(results[0][0])
+
+                else:
+                    speak("Opening"+ query)
+                    if platform.system() == 'Darwin':
+                        os.system('open -a '+query)  #MAC 
+                    elif platform.system() == 'Windows':
+                        os.system('start'+query) #WINDOWS
+                    else:
+                        print("This is another OS")
+        except:
+            speak("some thing went wrong")
+
+    #if query!="":
+    #    speak("Opening"+ query)
+    #    if platform.system() == 'Darwin':
+    #        os.system('open -a '+query)  #MAC 
+    #    elif platform.system() == 'Windows':
+    #        os.system('start'+query) #WINDOWS
+    #    else:
+    #        print("This is another OS")
+    #else:
+    #    speak("not found")
 
 def PlayYoutube(query):
     search_term = extract_yt_term(query)
