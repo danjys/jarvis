@@ -16,6 +16,7 @@ import platform
 from engine.helper import extract_yt_term, remove_words
 import pvporcupine
 import pyautogui as autogui
+from hugchat import hugchat
 
 #loading environment variables from .env files
 from dotenv import load_dotenv
@@ -240,3 +241,21 @@ def sendMessage(message, mobileNo, name):
     #send
     tapEvents(957, 1397)
     speak("message send successfully to "+name)
+
+# chat bot 
+def chatBot(query):
+    user_input = query.lower()
+
+    if platform.system() == 'Darwin':
+        chatbot = hugchat.ChatBot(cookie_path="engine/cookies.json")
+    elif platform.system() == 'Windows':
+        chatbot = hugchat.ChatBot(cookie_path="engine\cookies.json")  # WINDOWS
+    else:
+        print("This is another OS")
+
+    id = chatbot.new_conversation()
+    chatbot.change_conversation(id)
+    response =  chatbot.chat(user_input)
+    print(response)
+    speak(response)
+    return response

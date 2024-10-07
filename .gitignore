@@ -2,3 +2,4 @@
 .env
 /engine/__pycache__
 jarvis.db
+/engine/cookies.json

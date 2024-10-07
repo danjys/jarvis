@@ -10,6 +10,7 @@ pip install PyAudio
 pip install pywhatkit
 pip install python-dotenv
 pip install pvporcupine 
+pip install hugchat
 ```
 
 ### NOTES
@@ -42,8 +43,11 @@ Since you're using the older version pvporcupine==1.9.5, which doesn't natively 
 - undraw
 
 
-
-
+## HUGCHAT
+    - Create account in huggingface.co
+    - goto  /chat
+    - install cookie export extension after loggin inot it and picking a ai model
+    - create file engine/cookies.json and paste cookies json form https://huggingface.co/chat/
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
