@@ -10,6 +10,7 @@ def speak(text):
     engine.setProperty('rate', 184)     # setting up new voice rate
     eel.DisplayMessage(text)
     engine.say(text)
+    eel.receiverText(text)
     engine.runAndWait()
 
 def takecommand():
@@ -49,6 +50,7 @@ def allCommands(message=1):
     if message == 1:
         query = takecommand()
         print(query)
+        eel.senderText(query)
     else :
         query = message
 
