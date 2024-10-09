@@ -28,12 +28,15 @@ db.py create the databases by running the appropriate queries and adding your ne
 ### Porcupine 
 Porcupine library is used for hot word detection
 
-pip install pvporcupine==1.9.5 //Free Version new versions are paid and jarvis voice is trained. Its an NLP based Library
+> [!CAUTION]
+> pip install pvporcupine==1.9.5 //Free Version new versions are paid and jarvis voice is trained. Its an NLP based Library
 
-MACOSX ISSUE
-Since you're using the older version pvporcupine==1.9.5, which doesn't natively support Apple Silicon (arm64), there are a couple of approaches you can try to work around the architecture mismatch issue.
+> [!WARNING]
+> MACOSX ISSUE
+> Since you're using the older version pvporcupine==1.9.5, which doesn't natively support Apple Silicon (arm64), there are a couple of approaches you can try to work around the architecture mismatch issue.
 
-//picovoice # AccessKey obtained from [Picovoice Console](https://console.picovoice.ai/)
+> [!IMPORTANT]
+> //picovoice # AccessKey obtained from [Picovoice Console](https://console.picovoice.ai/)
 
 ## USAGE
 - `open` an app : opens an app that is installed on the machine
@@ -55,21 +58,15 @@ Since you're using the older version pvporcupine==1.9.5, which doesn't natively 
 
 
 ## RESOURCES
-- undraw
-- lottie files
-
-> [!NOTE]
-> Useful information that users should know, even when skimming content.
-
 > [!TIP]
-> Helpful advice for doing things better or more easily.
+> undraw
+> lottie files
 
-> [!IMPORTANT]
-> Key information users need to know to achieve their goal.
 
-> [!WARNING]
-> Urgent info that needs immediate user attention to avoid problems.
 
-> [!CAUTION]
-> Advises about risks or negative outcomes of certain actions.
+
+
+
+
+
 
