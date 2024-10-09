@@ -41,9 +41,11 @@ Since you're using the older version pvporcupine==1.9.5, which doesn't natively 
 - Play Thunder by Imagine Dragons `on youtube` : will open youtube and play the song
 
 
-## RESOURCES
-- undraw
-- lottie files
+## HUGCHAT
+    - Create account in huggingface.co
+    - goto  /chat
+    - install cookie export extension after loggin inot it and picking a ai model
+    - create file engine/cookies.json and paste cookies json form https://huggingface.co/chat/
 
 ## FACE AUTHENTICATION
 - Run engine/auth/sample.py to capture samples to train a face
@@ -51,11 +53,10 @@ Since you're using the older version pvporcupine==1.9.5, which doesn't natively 
 > [!NOTE]
 > Uses haarcascade whihc gives 50-60% face detection acuracy but easier to use for web development.
 
-## HUGCHAT
-    - Create account in huggingface.co
-    - goto  /chat
-    - install cookie export extension after loggin inot it and picking a ai model
-    - create file engine/cookies.json and paste cookies json form https://huggingface.co/chat/
+
+## RESOURCES
+- undraw
+- lottie files
 
 > [!NOTE]
 > Useful information that users should know, even when skimming content.
