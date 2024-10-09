@@ -59,8 +59,8 @@ Porcupine library is used for hot word detection
 
 ## RESOURCES
 > [!TIP]
-> undraw
-> lottie files
+> - undraw
+> - lottie files
 
 
 
