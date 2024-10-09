@@ -16,8 +16,8 @@ pip install opencv-contrib-python
 ```
 
 ### NOTES
-
-db.py create the databases by running the appropriate queries and adding your necessary commands
+> [!NOTE]
+> db.py create the databases by running the appropriate queries and adding your necessary commands
 
 ### VISUAL STUDIO EXTENSIONS 
 - NOTES
