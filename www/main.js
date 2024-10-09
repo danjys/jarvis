@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    // double brackets are due to function from backend
+    eel.init()()
+
     $('.text').textillate({
         loop: true,
         sync: true,

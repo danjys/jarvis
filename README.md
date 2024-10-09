@@ -11,6 +11,8 @@ pip install pywhatkit
 pip install python-dotenv
 pip install pvporcupine 
 pip install hugchat
+pip install opencv-python
+pip install opencv-contrib-python 
 ```
 
 ### NOTES
@@ -41,7 +43,13 @@ Since you're using the older version pvporcupine==1.9.5, which doesn't natively 
 
 ## RESOURCES
 - undraw
+- lottie files
 
+## FACE AUTHENTICATION
+- Run engine/auth/sample.py to capture samples to train a face
+- Run trainer.py to generate a trainer.yml to be used for face authentication
+> [!NOTE]
+> Uses haarcascade whihc gives 50-60% face detection acuracy but easier to use for web development.
 
 ## HUGCHAT
     - Create account in huggingface.co
