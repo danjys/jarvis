@@ -1,5 +1,15 @@
 # J.A.R.V.I.S
 
+Face authentication
+![Face Authnetication](documentation/assets/faceauth.png)
+
+Hotword detection 
+![Jarvis](documentation/assets/jarvis.png)
+
+Personal Assistant which is capable of opening apps on your system, or links and search for videos on youtube
+![Jarvis](documentation/assets/jarvis2.png)
+
+
 ## REQUIREMENTS
 ``` bash
 pip install --upgrade pip
